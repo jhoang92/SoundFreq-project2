@@ -5,7 +5,6 @@
 /**************************
  Dependencies
 **************************/
-var soundData = require('../app/data.js');
 var path = require('path');
 
 

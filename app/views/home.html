@@ -1,73 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SoundFreq</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../../public/assets/css/index.css">
-    <link rel="stylesheet" type="text/css" href="../../public/assets/css/intro.css"">
-    <link rel="stylesheet" type="text/css" href="../../public/assets/css/menu.css">
-    <link rel="stylesheet" type="text/css" href="../../public/assets/css/navbar.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoundFreq</title>
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="../../public/assets/css/index.css">
+  <link rel="stylesheet" type="text/css" href="../../public/assets/css/intro.css" ">
+    <link rel="stylesheet " type="text/css " href="../../public/assets/css/menu.css ">
+    <link rel="stylesheet " type="text/css " href="../../public/assets/css/navbar.css ">
 
   </head>
   <body>
-    <div id="canvas-main" class="container-fluid">
+    <div id="canvas-main " class="container-fluid ">
 
       <nav>
-        <ul class="list-unstyled main-menu">
-          <li class="text-right"><a href="#" id="nav-close">[close]</a></li>
+        <ul class="list-unstyled main-menu ">
+          <li class="text-right "><a href="# " id="nav-close ">[close]</a></li>
 
-          <!-- <li><a href="#">Audio Themes <span class="icon"></span></a></li> -->
           <li>
-            <form method="GET">Audio Themes
-              <ul class="list-soundThemes">
-                <!-- <INPUT type="button" value="Bugs" name="bugListTheme" onclick="return getBugs();"> -->
-                <li class="sub-nav"><a href="/" class="list" id="bugs">Bugs<span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="/" class="list" id="drops">Drops<span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="/" class="list" id="electronics">Electronics<span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="/" class="list" id="noises">Noises<span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="/" class="list" id="all">All Themes<span class="icon"></span></a></li>
-              </ul>
-            </form>
-          </li>
-          <!-- <li><a href="#">Visual Themes <span class="icon"></span></a></li> -->
-          <li><form action="../controllers/image-controller.js" method="GET">Visual Themes</form>
-            <ul class="list-unstyled">
-                <li class="sub-nav"><a href="#">Sub Menu One <span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="#">Sub Menu Two <span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="#">Sub Menu Three <span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="#">Sub Menu Four <span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="#">Sub Menu Five <span class="icon"></span></a></li>
-            </ul>
+              
           </li>
         </ul>
       </nav>
 
-      <div class="navbar navbar-inverse navbar-fixed-top">
-        <a class="navbar-brand" href="index.html">SoundFreq</a>
-        <div class="navbar-header pull-right">
-          <a id="nav-expander" class="nav-expander fixed">
-            MENU &nbsp;<i class="fa fa-bars fa-lg white"></i>
+      <div class="navbar navbar-inverse navbar-fixed-top ">
+        <a class="navbar-brand " href="index.html ">SoundFreq</a>
+        <div class="navbar-header pull-right ">
+          <a id="nav-expander " class="nav-expander fixed ">
+            MENU &nbsp;<i class="fa fa-bars fa-lg white "></i>
           </a>
         </div>
       </div>
-
-      <!-- NOTE audio visual content goes here -->
-
-      <!-- NOTE this button is for sandboxing only  -->
-      <button id="play">Play</button>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../public/assets/js/visuals.js"></script>
-    <script src="../../public/assets/js/sound.js"></script>
-    <script src="../../public/assets/js/menu.js"></script>
-    <script src="../../public/assets/js/howler.js"></script>
+      <div class="container ">
+          <div class="keys ">
+            <div data-key="69 " class="key ">
+              <kbd>E</kbd>
+  
+            </div>
+            <div data-key="82 " class="key ">
+              <kbd>R</kbd>
+            </div>
+            <div data-key="84 " class="key ">
+              <kbd>T</kbd>
+            </div>
+            <div data-key="89 " class="key ">
+              <kbd>Y</kbd>
+            </div>
+            <div data-key="85 " class="key ">
+              <kbd>U</kbd>
 
+            </div>
+            <div data-key="73 " class="key ">
+              <kbd>I</kbd>
+
+            </div>
+          </div>
+  <!-- top layer end -->
+
+  <!-- MID ROW -->
+        <div class="keys " id="mid-row ">
+          <div data-key="68 " class="key2 ">
+            <kbd>D</kbd>
+
+          </div>
+          <div data-key="70 " class="key2 ">
+            <kbd>F</kbd>
+ 
+          </div>
+          <div data-key="71 " class="key2 ">
+            <kbd>G</kbd>
+ 
+          </div>
+          <div data-key="72 " class="key2 ">
+            <kbd>H</kbd>
+    
+          </div>
+          <div data-key="74 " class="key2 ">
+            <kbd>J</kbd>
+       
+          </div>
+          <div data-key="75 " class="key2 ">
+            <kbd>K</kbd>
+
+          </div>
+        </div>
+    <!-- MID ROW END -->
+
+    <!-- LAST ROW -->
+        <div class="keys ">
+          <div data-key="67 " class="key3 ">
+            <kbd>C</kbd>
+
+          </div>
+          <div data-key="86 " class="key3 ">
+            <kbd>V</kbd>
+    
+          </div>
+          <div data-key="66 " class="key3 ">
+            <kbd>B</kbd>
+         
+          </div>
+          <div data-key="78 " class="key3 ">
+            <kbd>N</kbd>
+      
+          </div>
+          <div data-key="77 " class="key3 ">
+            <kbd>M</kbd>
+
+          </div>
+        </div>
+     
+  </div>
+    
+      <!-- TOP ROW -->
+        <audio data-key="69 " src="../../public/assets/sounds/electronics-bubbles.wav "></audio>
+        <audio data-key="82 " src="../../public/assets/sounds/electronics-circus.wav "></audio>
+        <audio data-key="84 " src="../../public/assets/sounds/electronics-laserhits.wav "></audio>
+        <audio data-key="89 " src="../../public/assets/sounds/noise-cat.wav "></audio>
+        <audio data-key="85 " src="../../public/assets/sounds/noise-electricwoosh.wav "></audio>
+        <audio data-key="73 " src="../../public/assets/sounds/noise-metaltwang.wav "></audio>
+
+        <!-- MID ROW -->
+        <audio data-key="68 " src="../../public/assets/sounds/noise-nailpull.wav "></audio>
+        <audio data-key="70 " src="../../public/assets/sounds/noise-recordscratch.wav "></audio>
+        <audio data-key="71 " src="../../public/assets/sounds/noise-stungun.wav "></audio>
+        <audio data-key="72 " src="../../public/assets/sounds/noise-whizz.wav "></audio>
+        <audio data-key="74 " src="../../public/assets/sounds/boom.wav "></audio>
+        <audio data-key="75 " src="../../public/assets/sounds/clap.wav "></audio>
+
+        <!-- BOTTOM ROW -->
+        <audio data-key="67 " src="../../public/assets/sounds/hihat.wav "></audio>
+        <audio data-key="86 " src="../../public/assets/sounds/kick.wav "></audio>
+        <audio data-key="66 " src="../../public/assets/sounds/openhat.wav "></audio>
+        <audio data-key="78 " src="../../public/assets/sounds/ride.wav "></audio>
+        <audio data-key="77 " src="../../public/assets/sounds/snare.wav "></audio>
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js "></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js "></script>
+        <script src="../../public/assets/js/menu.js "></script>
+        <script src="../../public/assets/js/howler.js "></script>
+        
+        <script>
+          function removeTransition(e) {
+            if (e.propertyName !== 'transform') return;
+            e.target.classList.remove('playing');
+          }
+
+          function playSound(e) {
+            const audio = document.querySelector(`audio[data-key="${e.keyCode} "]`);
+            const key = document.querySelector(`div[data-key="${e.keyCode} "]`);
+            if (!audio) return;
+
+            key.classList.add('playing');
+            audio.currentTime = 0;
+            audio.play();
+          }
+
+          const keys = Array.from(document.querySelectorAll('.key'));
+          const keys2 = Array.from(document.querySelectorAll('.key2'));
+          const keys3 = Array.from(document.querySelectorAll('.key3'));
+          keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+          keys2.forEach(key => key.addEventListener('transitionend', removeTransition));
+          keys3.forEach(key => key.addEventListener('transitionend', removeTransition));
+          window.addEventListener('keydown', playSound);
+        </script>
   </body>
 </html>

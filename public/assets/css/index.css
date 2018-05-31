@@ -1,18 +1,80 @@
-/* NOTE delete #play before deployment */
-#play {
-  background-color: teal;
-  height: 90px;
-  width: 130px;
-  position: relative;
-  margin-top: 70px;
+html {
+  font-size: 10px;
+ background: black;
+  
+}
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
 
-#canvas-main {
-  background-color: #e6e8fa;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
+.container {
+  position: relative;
+  top: 80px;
+}
+.keys {
+  display: flex;
+  flex: 1;
+  min-height: 5vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.key {
+  border: .4rem solid #9affc4;
+  border-radius: .5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all 0.4s ease;
+  width: 10rem;
+  text-align: center;
+  color: white;
+}
+.key2{
+  
+    border: .4rem solid #04ebfc;
+    border-radius: .5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem .5rem;
+    transition: all 0.4s ease;
+    width: 10rem;
+    text-align: center;
+    color: white;
+      box-shadow: 0 0 1rem #04ebfc;
+ 
+}
+
+.key3{
+  
+  border: .4rem solid #ff49f3;
+  border-radius: .5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all 0.4s ease;
+  width: 10rem;
+  text-align: center;
+  color: white;
+    box-shadow: 0 0 1rem #ff49f3;
+
+}
+
+.playing {
+  transform: scale(1.1);
+  box-shadow: 0 0 1rem #9affc4;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
 }
