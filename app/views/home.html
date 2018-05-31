@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SoundFreq</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../public/assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../../public/assets/css/intro.css"">
+    <link rel="stylesheet" type="text/css" href="../../public/assets/css/menu.css">
+    <link rel="stylesheet" type="text/css" href="../../public/assets/css/navbar.css">
+
+  </head>
+  <body>
+    <div id="canvas-main" class="container-fluid">
+
+      <nav>
+        <ul class="list-unstyled main-menu">
+          <li class="text-right"><a href="#" id="nav-close">[close]</a></li>
+
+          <!-- <li><a href="#">Audio Themes <span class="icon"></span></a></li> -->
+          <li>
+            <form method="GET">Audio Themes
+              <ul class="list-soundThemes">
+                <!-- <INPUT type="button" value="Bugs" name="bugListTheme" onclick="return getBugs();"> -->
+                <li class="sub-nav"><a href="/" class="list" id="bugs">Bugs<span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="/" class="list" id="drops">Drops<span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="/" class="list" id="electronics">Electronics<span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="/" class="list" id="noises">Noises<span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="/" class="list" id="all">All Themes<span class="icon"></span></a></li>
+              </ul>
+            </form>
+          </li>
+          <!-- <li><a href="#">Visual Themes <span class="icon"></span></a></li> -->
+          <li><form action="../controllers/image-controller.js" method="GET">Visual Themes</form>
+            <ul class="list-unstyled">
+                <li class="sub-nav"><a href="#">Sub Menu One <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Two <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Three <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Four <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Five <span class="icon"></span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <a class="navbar-brand" href="index.html">SoundFreq</a>
+        <div class="navbar-header pull-right">
+          <a id="nav-expander" class="nav-expander fixed">
+            MENU &nbsp;<i class="fa fa-bars fa-lg white"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- NOTE audio visual content goes here -->
+
+      <!-- NOTE this button is for sandboxing only  -->
+      <button id="play">Play</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../public/assets/js/visuals.js"></script>
+    <script src="../../public/assets/js/sound.js"></script>
+    <script src="../../public/assets/js/menu.js"></script>
+    <script src="../../public/assets/js/howler.js"></script>
+
+  </body>
+</html>
