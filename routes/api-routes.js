@@ -1,102 +1,58 @@
-// *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
-
-/**************************
- Dependencies
-**************************/
-var path = require('path');
-
-
-// Requiring our Todo model
+// Requiring our models and passport as we've configured it
 var db = require("../app/models");
+var passport = require("../app/config/passport");
 
-
-// Routes
-// =============================================================
-module.exports = function (app) {
-  /*
-  working routes
-  */
-  // Get route for returning all sounds 
-  app.get("/api/soundFiles", function (req, res) {
-     res.json(soundData);
+module.exports = function(app) {
+  // Using the passport.authenticate middleware with our local strategy.
+  // If the user has valid login credentials, send them to the members page.
+  // Otherwise the user will be sent an error
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
+    // So we're sending the user back the route to the members page because the redirect will happen on the front end
+    // They won't get this or even be able to access this page if they aren't authed
+    res.json("/");
   });
 
-  /*********************
-  needs more work
-  **********************/
-  // GET route for getting all of the sound types
-  app.get("/api/soundTypes/", function (req, res) {
-    db.SoundType.findAll({})
-      .then(function (dbSoundType) {
-        res.json(dbSoundType);
-        console.log(dbSoundType);
-      });
-  });
-
-  //GET route to retrieve sounds by category
-  app.get("/api/soundTypes/:category", function (req, res) {
-    db.SoundType.findOne({
-      where: {
-        id: req.params.category
-      }
-    })
-      .then(function (dbSoundType) {
-        res.json(dbSoundType);
-      });
-  });
-
-
-  // Get route for retrieving a single sound
-  app.get("/api/soundFiles/:name", function (req, res) {
-    db.soundFiles.findOne({
-      where: {
-        id: req.params.name
-      }
-    })
-      .then(function (dbSoundFiles) {
-        res.json(dbSoundFiles);
-      });
-  });
-
-  // POST route for saving a new post
-  app.post("/", function (req, res) {
+  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
+  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
+  // otherwise send back an error
+  app.post("/api/signup", function(req, res) {
     console.log(req.body);
-    db.soundFiles.create({
-      name: req.body.name,
-      description: req.body.description
-      })
-      .then(function () {
-        res.json(soundData);
-      });
+    db.User.create({
+      firstname: req.body.firstName,
+      lastname: req.body.lastName,
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password
+    }).then(function() {
+      res.redirect(307, "/api/login");
+    }).catch(function(err) {
+      console.log(err);
+      res.json(err);
+      // res.status(422).json(err.errors[0].message);
+    });
   });
 
-  
-  // This should inject our data.js file from JSON into a MYSQL database on page load
-  app.post("/", function (req, res) {
-    db.soundFiles.create(req.body,
-      {
-        name: req.body.name,
-        description: req.body.description
-      })
-      .then(function () {
-        res.json(dbSoundFiles);
-      });
+  // Route for logging user out
+  app.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/");
   });
-  
-  /**************
-   * dete routes not needed since users wont be deleting data from server
- *************/
-// DELETE route for deleting posts
-app.delete("/api/posts/:id", function (req, res) {
-  db.Post.destroy({
-    where: {
-      id: req.params.id
+
+  // Route for getting some data about our user to be used client side
+  app.get("/api/user_data", function(req, res) {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
     }
-  })
-    .then(function (dbPost) {
-      res.json(dbPost);
-    });
-});
+    else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      res.json({
+        email: req.user.email,
+        id: req.user.id
+      });
+    }
+  });
+
 };
