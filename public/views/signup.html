@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Sign in</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/navbar.css">
 </head>
+
 <body>
-
-<div class="container center_div">
-   
-  <h2>Welcome to Sound Freq</h2>
-  <form action="/" class="signup">
-    <div class="form-group">
-      <label for="firstName">First Name:</label>
-      <input type="text" class="form-control" id="firstName-input" placeholder="Enter first name" name="firstname">
-    </div>
-    <div class="form-group">
-      <label for="lastName">Last Name:</label>
-      <input type="text" class="form-control" id="lastName-input" placeholder="Enter last name" name="lastname">
-    </div>
-    <div class="form-group">
-      <label for="username">Username:</label>
-      <input type="text" class="form-control" id="username-input" placeholder="Enter username" name="username">
-    </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email-input" placeholder="Enter email" name="email">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="password-input" placeholder="Enter password" name="pwd">
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
-    </div>
-    <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-      <span class="sr-only">Error:</span> <span class="msg"></span>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-</div>
+    <ul class="topnav">
+        <li>
+            <a class="active" href="/">SOUND FREQ</a>
+        </li>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <li class="right">
+            <a href="/signin">login</a>
+        </li>
+    </ul>
+
+    <div class="container center_div">
+
+        <h2>Welcome to Sound Freq</h2>
+        <form action="/" class="signup">
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" class="form-control" id="firstName-input" placeholder="Enter first name" name="firstname">
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" class="form-control" id="lastName-input" placeholder="Enter last name" name="lastname">
+                  </div>
+                  <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username-input" placeholder="Enter username" name="username">
+                  </div>
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email-input" placeholder="Enter email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="password-input" placeholder="Enter password" name="pwd">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="remember"> Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/assets/js/signup.js"></script>
-
 </body>
+
 </html>

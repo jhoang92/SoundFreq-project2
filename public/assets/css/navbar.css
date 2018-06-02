@@ -1,81 +1,42 @@
-a.nav-expander {
-  background: none repeat scroll 0 0 #000000;
-  color: #FFFFFF;
+body {
+  margin: 0;
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {
+  float: left;
+}
+
+ul.topnav li a {
   display: block;
-  font-size: 15px;
-  font-weight: 400;
-  height: 50px;
-  margin-right: 0;
-  padding: 1em 1.6em 2em;
-  position: absolute;
-  right: 0;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  text-transform: uppercase;
-  top: 0;
-  transition: right 0.3s ease-in-out 0s;
-  width: 130px;
-  z-index: 12;
-
-  transition: right 0.3s ease-in-out 0s;
-  -webkit-transition: right 0.3s ease-in-out 0s;
-  -moz-transition: right 0.3s ease-in-out 0s;
-  -o-transition: right 0.3s ease-in-out 0s;
-
 }
 
-a.nav-expander:hover {
-  cursor: pointer;
+ul.topnav li a:hover:not(.active) {
+  background-color: #111;}
+
+ul.topnav li a.active {
+  background-color: #111;
+  border: .4rem solid #9affc4;
+  border-color: #9affc4;
+  box-shadow: 0 0 1rem #9affc4;
 }
 
-a.nav-expander.fixed {
-  /* position: fixed; */
-  padding-top: 15px;
-  padding-right: 10px;
+ul.topnav li.right {
+  float: right;}
+
+@media screen and (max-width: 600px){
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
 }
 
-.nav-expanded a.nav-expander.fixed {
-  right: 20em;
-}
-
-nav {
-  background: #2d2f33;
-  display: block;
-  height: 100%;
-  overflow: auto;
-  position: fixed;
-  right: -20em;
-  font-size: 15px;
-  top: 0;
-  width: 20em;
-  z-index: 2000;
-
-  transition: right 0.3s ease-in-out 0s;
-  -webkit-transition: right 0.3s ease-in-out 0s;
-  -moz-transition: right 0.3s ease-in-out 0s;
-  -o-transition: right 0.3s ease-in-out 0s;
-
-}
-
-.nav-expanded nav {
-  right: 0;
-}
-
-body.nav-expanded {
-  margin-left: 0em;
-  transition: right 0.4s ease-in-out 0s;
-  -webkit-transition: right 0.4s ease-in-out 0s;
-  -moz-transition: right 0.4s ease-in-out 0s;
-  -o-transition: right 0.4s ease-in-out 0s;
-}
-
-#nav-close {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-weight: 300;
-  font-size: 24px;
-  padding-right: 10px;
-}
-
-.navbar-brand {
-  font-size: 22px;
-  font-weight: 400;
-}
