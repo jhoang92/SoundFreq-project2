@@ -27,9 +27,11 @@ module.exports = function (app) {
   });
 
   app.get("/signin", function(req, res) {
+    var user = req.body.username;
     // if user has account send them home
     if(req.user) {
-      res.redirect("/");
+      res.redirect("../public/views/home2.html");
+      $("#user").append(user);
     }
     res.sendFile(path.join(__dirname, "../public/views/signin.html"));
   });
