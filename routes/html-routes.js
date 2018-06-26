@@ -19,6 +19,10 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/views/home.html"));
   });
 
+  app.get("/members", function(req,res) {
+    res.sendFile(path.join(__dirname, "../public/views/members.html"));
+  });
+
   app.get("/signup", function (req, res) {
     if (req.user) {
       res.redirect("/");
@@ -27,11 +31,9 @@ module.exports = function (app) {
   });
 
   app.get("/signin", function(req, res) {
-    var user = req.body.username;
     // if user has account send them home
     if(req.user) {
-      res.redirect("../public/views/home2.html");
-      $("#user").append(user);
+      res.redirect("/");
     }
     res.sendFile(path.join(__dirname, "../public/views/signin.html"));
   });
