@@ -33,7 +33,7 @@ module.exports = function (app) {
   app.get("/signin", function(req, res) {
     // if user has account send them home
     if(req.user) {
-      res.redirect("/members");
+      res.redirect("/members.html");
     }
     res.sendFile(path.join(__dirname, "../public/views/signin.html"));
   });
